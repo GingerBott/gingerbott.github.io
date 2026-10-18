@@ -1,2 +1,2 @@
-# GingerBott.github.io
+# gingerbott.github.io
 AME 220

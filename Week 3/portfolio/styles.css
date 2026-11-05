@@ -1,0 +1,125 @@
+/* Week 3 Portfolio - fantasy character sheet
+   base size: 8px (4px for small stuff)
+   styled from the top down: root, body, header, sections, footer */
+
+/* colors and fonts */
+:root {
+    --background: #081C15;
+    --panel: #1B4332;
+    --border: #2D6A4F;
+    --text: #F3EFE0;
+    --gold: #E9C46A;
+    --headingFont: "Uncial Antiqua", serif;
+    --bodyFont: "Cormorant Garamond", serif;
+}
+
+/* universal selector */
+* {
+    color: var(--text);
+    font-family: var(--bodyFont);
+}
+
+/* background pattern */
+body {
+    background-color: var(--background);
+    background-image: radial-gradient(var(--panel) 2px, transparent 2px);
+    background-size: 24px 24px;
+    padding: 0 64px;
+    font-size: 20px;
+}
+
+/* all headings are gold */
+header, h2, h3 {
+    font-family: var(--headingFont);
+    font-weight: normal;
+    color: var(--gold);
+}
+
+header {
+    font-size: 32px;
+    padding: 16px 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+.tagline {
+    font-size: 40px;
+    font-style: italic;
+    margin: 0 0 64px 0;
+    animation: fadeIn 1.5s;
+}
+
+/* pseudo-element: storybook drop cap */
+.tagline::first-letter {
+    font-family: var(--headingFont);
+    font-style: normal;
+    font-size: 64px;
+    color: var(--gold);
+}
+
+/* text-shadow */
+h2 {
+    font-size: 40px;
+    margin: 0 0 24px 0;
+    text-shadow: 2px 2px 0px var(--background);
+}
+
+h3 {
+    font-size: 24px;
+    margin: 0 0 8px 0;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+/* class cards */
+.class-card {
+    background-color: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: border-color 300ms, box-shadow 300ms;
+}
+
+/* box-shadow + transition on hover */
+.class-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0px 0px 16px var(--gold);
+}
+
+.class-card p {
+    margin: 0;
+}
+
+/* child selector: lists directly inside a section */
+section > ul {
+    background-color: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 48px;
+    list-style-image: url('./assets/leaf.svg');
+}
+
+section li {
+    padding: 8px 0;
+}
+
+.date {
+    color: var(--gold);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 32px 0 64px 0;
+    border-top: 1px solid var(--border);
+}
+
+/* animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

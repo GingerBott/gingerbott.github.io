@@ -1,0 +1,133 @@
+/* ---------- Page ---------- */
+body {
+    background-color: #2b1d1a; /* dark smoky brown, like burnt wood */
+    font-family: "Nunito", Arial, sans-serif;
+    margin: 0;
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------- The card (parent) ---------- */
+.card {
+    width: 500px;
+    height: 750px;
+    background-color: #fbe3c0;        /* warm fire-type card color */
+    padding: 36px;
+    border-radius: 12px;
+    border: 8px solid #f4c430;        /* yellow trading-card border */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 120, 40, 0.35); /* bonus: box shadow with a fiery glow */
+}
+
+/* ---------- Children of the card ---------- */
+.card img {
+    width: 100%;          /* fills the space inside the card's padding */
+    height: 300px;
+    object-fit: cover;    /* crops instead of stretching */
+    margin-bottom: 12px;
+    display: block;
+    border-radius: 4px;
+    border: 4px solid #c9a227;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card h1 {
+    font-family: "Lilita One", "Arial Black", sans-serif;
+    color: #c4351b;       /* fire red */
+    font-size: 48px;
+    margin: 0;
+}
+
+.hp {
+    font-family: "Lilita One", "Arial Black", sans-serif;
+    color: #c4351b;
+    font-size: 24px;
+}
+
+.card p {
+    color: #3b2a22;
+    font-size: 16px;      /* smaller than the h1 */
+    line-height: 1.5;
+    margin: 8px 0 16px;
+}
+
+.card .type {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8a5a2b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 4px 0 8px;
+}
+
+.attacks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+}
+
+.attacks li {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #3b2a22;
+    padding: 8px 0;
+    border-top: 2px solid #e8b98a;
+}
+
+.attacks li:last-child {
+    border-bottom: 2px solid #e8b98a;
+}
+
+/* ---------- Button (link styled with pseudo-classes) ---------- */
+.button:link,
+.button:visited {
+    display: inline-block;
+    background-color: #e4572e;
+    color: #ffffff;
+    font-family: "Lilita One", "Arial Black", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 #9e2a12;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+    background-color: #ff7a45;
+}
+
+.button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #9e2a12;
+}
+
+.button:focus-visible {
+    outline: 3px solid #f4c430;
+    outline-offset: 3px;
+}
+
+/* ---------- Photo credit ---------- */
+.credit {
+    color: #b9a79c;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+.credit a:link,
+.credit a:visited {
+    color: #f4c430;
+}
+
+.credit a:hover {
+    color: #ffffff;
+}

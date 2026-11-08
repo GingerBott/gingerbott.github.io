@@ -1,0 +1,249 @@
+/* ---------- Colors ---------- */
+:root {
+    --background: #0e0b10;
+    --panel: #1b1519;
+    --gold: #d4a94e;
+    --text: #efe6d2;
+    --muted: #b8aa92;
+}
+
+/* ---------- Page ---------- */
+
+/* 16px root on desktop, every font size below is in rem */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "EB Garamond", Georgia, serif;
+    line-height: 1.4;
+}
+
+/* ---------- Sticky nav: four buttons equally spaced in the middle ---------- */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--gold);
+}
+
+/* every button on the page shares this */
+.button:link,
+.button:visited {
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    color: var(--gold);
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--gold);
+    color: var(--background);
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+/* same width so the four buttons look even */
+nav .button {
+    flex: 0 1 8rem;
+}
+
+/* ---------- Page title ---------- */
+header {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: var(--gold);
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+/* ---------- Grid layout: 2 columns x 2 rows ---------- */
+.roster {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+}
+
+/* ---------- Each card is a flex column, centered, no wrapping ---------- */
+.card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--panel);
+    border: 1px solid #4a3a25;
+    border-radius: 8px;
+    text-align: center;
+    scroll-margin-top: 5rem; /* so the sticky nav doesn't cover the card */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    border-color: var(--gold);
+}
+
+/* :target = the card whose id is in the url, so this is the "selected" hero */
+.card:target {
+    border-color: var(--gold);
+    box-shadow: 0 0 1.5rem rgba(212, 169, 78, 0.45);
+}
+
+img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+h2 {
+    margin: 1rem 0 0;
+    color: var(--text);
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+p {
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+}
+
+.role {
+    margin: 0;
+    color: var(--gold);
+    font-size: 1.125rem;
+    font-style: italic;
+}
+
+ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 0.125rem 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* two buttons side by side at the bottom of the card */
+.card-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid #4a3a25;
+    text-align: center;
+}
+
+small {
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+/* ---------- Mobile: 12px root, 1 column, each card fills the screen ---------- */
+@media screen and (max-width: 720px) {
+    html {
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .roster {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 0;
+        padding: 0;
+    }
+
+    /* the nav sits over the extra padding at the top of each card */
+    .card {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 5rem 1.5rem 2rem;
+        border-width: 1px 0;
+        border-radius: 0;
+        scroll-margin-top: 0;
+    }
+
+    /* 12px is small to read, so the text gets a bigger rem value */
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    p,
+    .role,
+    header p {
+        font-size: 1.4rem;
+    }
+
+    li {
+        font-size: 1.3rem;
+    }
+
+    .button:link,
+    .button:visited {
+        font-size: 1.1rem;
+    }
+
+    /* less side padding so all four fit on narrow phones */
+    nav .button:link,
+    nav .button:visited {
+        padding: 0.5rem 0.25rem;
+    }
+}

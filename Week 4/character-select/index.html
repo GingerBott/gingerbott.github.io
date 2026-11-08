@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanternfall | Choose Your Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- sticky bar with four buttons, spaced with flexbox -->
+    <nav>
+        <a class="button" href="#knight">Knight</a>
+        <a class="button" href="#archer">Archer</a>
+        <a class="button" href="#mage">Mage</a>
+        <a class="button" href="#rogue">Rogue</a>
+    </nav>
+
+    <header>
+        <h1>Lanternfall</h1>
+        <p>The last lantern is going out. Choose who carries it into the dark.</p>
+    </header>
+
+    <!-- 2 x 2 grid on desktop, 1 column on mobile -->
+    <main class="roster">
+        <div class="card" id="knight">
+            <img src="./assets/knight.svg" alt="A steel shield with a gold-hilted sword on a crimson background">
+            <h2>Brannoch Vale</h2>
+            <p class="role">The Ironward</p>
+            <p>Sworn to the lantern since boyhood, Brannoch has never once taken a step back from a fight.</p>
+            <ul>
+                <li>Shield Wall: block the next three hits</li>
+                <li>Oathstrike: heavy blow that taunts foes</li>
+                <li>Last Stand: survive one fatal hit</li>
+            </ul>
+            <div class="card-buttons">
+                <a class="button" href="#knight">Select</a>
+                <a class="button" href="#archer">Next</a>
+            </div>
+        </div>
+
+        <div class="card" id="archer">
+            <img src="./assets/archer.svg" alt="A bow and arrow in front of a crescent moon and stars">
+            <h2>Sefra Nightlark</h2>
+            <p class="role">The Moon Hunter</p>
+            <p>Sefra tracks what crawls out after dusk and has not yet missed anything that bleeds.</p>
+            <ul>
+                <li>Moonshot: pierce every foe in a line</li>
+                <li>Silver Snare: pin a target in place</li>
+                <li>Night Eyes: reveal hidden enemies</li>
+            </ul>
+            <div class="card-buttons">
+                <a class="button" href="#archer">Select</a>
+                <a class="button" href="#mage">Next</a>
+            </div>
+        </div>
+
+        <div class="card" id="mage">
+            <img src="./assets/mage.svg" alt="A burning flame inside a circle of runes">
+            <h2>Ilvane Ashmere</h2>
+            <p class="role">The Emberwitch</p>
+            <p>Ilvane stole a spark of the lantern itself, and it has been slowly burning through her ever since.</p>
+            <ul>
+                <li>Cinder Bloom: ignite a whole area</li>
+                <li>Ashen Veil: turn aside one spell</li>
+                <li>Kindle: trade health for power</li>
+            </ul>
+            <div class="card-buttons">
+                <a class="button" href="#mage">Select</a>
+                <a class="button" href="#rogue">Next</a>
+            </div>
+        </div>
+
+        <div class="card" id="rogue">
+            <img src="./assets/rogue.svg" alt="Two crossed daggers surrounded by green smoke">
+            <h2>Tam Quickfinger</h2>
+            <p class="role">The Gutter Prince</p>
+            <p>Tam only joined the quest to rob it, but the lantern turned out to be worth more lit.</p>
+            <ul>
+                <li>Backstab: triple damage from behind</li>
+                <li>Smoke Step: vanish for one turn</li>
+                <li>Light Fingers: steal an enemy's item</li>
+            </ul>
+            <div class="card-buttons">
+                <a class="button" href="#rogue">Select</a>
+                <a class="button" href="#knight">Next</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <small>AME 220 &middot; Week 4 &middot; Lanternfall is a made-up game for this project</small>
+    </footer>
+</body>
+
+</html>
